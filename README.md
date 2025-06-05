@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# 自由に動かせる付箋アプリ (Sticky Notes App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 概要
 
-## Available Scripts
+このプロジェクトは、React と TypeScript を使用して開発された、ウェブブラウザ上で自由に付箋を追加し、移動できるシンプルな付箋（スティッキーズ）アプリケーションです。アイデアの整理、簡単なメモ、タスク管理など、デジタルな付箋として直感的に利用できます。
 
-In the project directory, you can run:
+- **ドラッグ＆ドロップ**: 付箋を画面内で自由に動かせます。
+- **テキスト編集**: 付箋をクリックすると、その場でテキストを編集できます。
+- **ランダム配置**: 新しい付箋は、ボタンに重ならないように画面内のランダムな位置に自動で追加されます。
+- **レスポンシブ配置**: ウィンドウサイズを変更しても、付箋が画面外に隠れてしまわないように自動で再配置されます。
+- **シンプルなUI**: 直感的で使いやすいインターフェースを目指しました。
 
-### `npm start`
+## 技術スタック
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* **フロントエンド**: React (TypeScript)
+* **状態管理**: React Hooks (`useState`, `useEffect`, `useRef`)
+* **ドラッグ＆ドロップ**: `@dnd-kit/core`
+* **スタイリング**: CSS Modules / 通常のCSS
+* **ビルドツール**: Create React App (CRA)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 使い方
 
-### `npm test`
+1.  アプリを開きます。
+2.  画面中央下部にある「付箋を追加」ボタンをクリックします。
+3.  新しい付箋が画面内のランダムな位置に表示され、すぐにテキストを入力できる状態になります。
+4.  付箋にメモを入力し、右下の「▶︎」ボタンをクリックすると編集が確定されます。
+5.  付箋をクリック＆ドラッグで、画面内の好きな場所に移動できます。
+6.  ウィンドウのサイズを変更しても、付箋は画面内に自動で調整されます。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 開発環境のセットアップ (開発者向け)
 
-### `npm run build`
+このプロジェクトをローカル環境で実行するには、以下の手順に従ってください。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 前提条件
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Node.js (LTS推奨) と npm または Yarn がインストールされていること。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### インストール
 
-### `npm run eject`
+1.  プロジェクトをクローンします。
+    ```bash
+    git clone [https://github.com/あなたのGitHubユーザー名/note-app.git](https://github.com/あなたのGitHubユーザー名/note-app.git)
+    ```
+2.  プロジェクトディレクトリに移動します。
+    ```bash
+    cd note-app
+    ```
+3.  依存関係をインストールします。
+    ```bash
+    yarn install
+    # または npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 開発サーバーの起動
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn start
+# または npm start
