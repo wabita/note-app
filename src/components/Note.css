@@ -1,0 +1,83 @@
+.note {
+    width: 250px; /* ★付箋の幅を固定 */
+    height: 180px; /* ★付箋の高さを固定 (例: これくらいで調整) */
+    box-sizing: border-box;
+    padding: 1em 1.5em; /* 上下のパディングを確保 */
+    background-color: #97bfba;
+    color: #40545e;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    position: relative; /* 子要素の絶対配置の基準となる */
+}
+
+/* 付箋の右上の折り返しデザイン */
+.note::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 20px 20px 0;
+    border-style: solid;
+    border-color: #78a39e #fff;
+    box-shadow: -1px 1px 1px rgb(0 0 0 / 5%);
+    content: '';
+}
+
+.note-content-wrapper {
+    flex-grow: 1; /* 残りのスペースを埋める */
+    overflow-y: auto; /* コンテンツが溢れたらスクロールバー */
+    /* ★内部のコンテンツのパディングを統一する場合、ここに適用することも考慮 */
+    /* padding-bottom: 5px; /* ボタンとの隙間調整 */
+}
+
+.note textarea,
+.note p {
+    background-color: transparent;
+    border: none;
+    resize: none;
+    font-family: inherit;
+    font-size: 1em;
+    color: #333;
+    width: 100%;
+    height: 100%; /* 親要素(note-content-wrapper)の高さに合わせる */
+    box-sizing: border-box;
+    outline: none; /* フォーカス時の枠を非表示に */
+    white-space: pre-wrap; /* 改行を保持 */
+    word-wrap: break-word; /* 長い単語を折り返す */
+    line-height: 1.4; /* 行の高さを統一 */
+    padding: 0; /* ★ブラウザのデフォルトパディングを打ち消す */
+    margin: 0; /* ★ブラウザのデフォルトマージンを打ち消す */
+}
+
+/* ボタンが常に占めるスペース */
+.note-button-spacer {
+    height: 40px; /* ★ボタンの高さ + 上下のマージン・パディングの合計分 */
+    flex-shrink: 0; /* スペースを縮小しない */
+    display: flex;
+    justify-content: flex-end; /* ボタンを右寄せ */
+    align-items: center;
+}
+
+.note button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #f2a08b;
+    cursor: pointer;
+}
+
+.note button:hover {
+    color: #40545e;
+    border: 1px solid #fbf2c7;
+    background-color: #fbf2c7;
+}
+
+.note button:hover path {
+    fill: #71a9d0;
+}

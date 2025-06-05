@@ -1,0 +1,40 @@
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px; 
+    margin:0 auto;
+    padding: .9em 2em;
+    border: none;
+    border-radius: 25px;
+    background-color: #40545e;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.button::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    color: #40545e;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    content: '';
+}
+
+.button:hover {
+    background-color: #f2a08b;
+}
+
+/*　付箋追加ボタンを画面中央に固定 */
+.add-button-fixed {
+    position: fixed; /* 画面に固定 */
+    top: 50%;        /* 上から50%の位置 */
+    left: 50%;       /* 左から50%の位置 */
+    transform: translate(-50%, -50%); /* 要素自身の幅と高さの半分だけ左上に戻し、完全に中央揃えにする */
+    z-index: 1001;   /* 付箋より手前に表示されるように z-index を高くする */
+}

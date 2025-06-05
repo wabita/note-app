@@ -1,38 +1,11 @@
 .App {
-  text-align: center;
-}
+  /* 画面全体の高さを使用 */
+  height: 100vh; /* viewport height = 画面の高さの100% */
+  width: 100vw; /* viewport width = 画面の幅の100% */
+  overflow: hidden; /* ★Appコンポーネント内でもスクロールを禁止 */
+  position: relative; /* Noteコンポーネント (position: absolute) の基準となる */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* 必要に応じて背景色やテキスト色を設定 */
+  background-color: #fbf2c7;
+  color: #40545e; /* 例 */
 }
